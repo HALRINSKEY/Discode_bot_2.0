@@ -68,11 +68,4 @@ class MyClient(discord.Client):
 
 
 client = MyClient(intents=intents)
-client.run("OTY2OTMwOTgzOTk3ODI5MjUw.GMHX_g.znBdL4gm0EjXoHdbDOssPz_qdIrQDfkOEfxvAo")
-'''
-test_bot
-OTY2OTMwOTgzOTk3ODI5MjUw.GMHX_g.znBdL4gm0EjXoHdbDOssPz_qdIrQDfkOEfxvAo
-
-notice_bot
-OTQ5MDg0MTE0NTM4MDkwNTM4.GlH7ot.mEt3PSjF0wxr37nEiVmmXYFsG1YFwvtxBqzWmY
-'''
+client.run("token")
