@@ -64,7 +64,7 @@ class MyClient(discord.Client):
                 channels[ch.name] = str(ch.id)
 
             for name, id in channels.items():
-                await self.botRoom.send("name:" + name + "    id:" + id)
+                await message.channel.send("name:" + name + "    id:" + id)
 
 
 client = MyClient(intents=intents)
