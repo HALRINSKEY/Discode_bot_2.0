@@ -5,11 +5,10 @@ import time
 intents = discord.Intents.default()
 intents.message_content = True
 
-leave_name = 0
-leave_time = 0
-
 
 class MyClient(discord.Client):
+    leave_name = 0
+    leave_time = 0
 
     async def on_ready(self):
         print(f'Logged on as {self.user}!')
@@ -18,8 +17,7 @@ class MyClient(discord.Client):
 
 #noticebot------------------------------------------------------------------------------
     async def on_voice_state_update(self, member, before, after):    
-        global leave_name
-        global leave_time
+        
 
         # チャンネルへの入室ステータスが変更されたとき（ミュートON、OFFに反応しないように分岐）
         if before.channel != after.channel:
@@ -33,8 +31,8 @@ class MyClient(discord.Client):
             if after.channel is not None and after.channel.id in announceChannelIds:
             
                 #退室して5秒以内に入室した際は通知しない
-                if leave_name == member.name:
-                    t = time.time() - leave_time
+                if self.leave_name == member.name:
+                    t = time.time() - self.leave_time
 
                     if t < 5:
                         pass
@@ -47,8 +45,8 @@ class MyClient(discord.Client):
         #退室
         if before.channel is not None and before.channel.id in announceChannelIds:
             
-            leave_name = member.name
-            leave_time = time.time()
+            self.leave_name = member.name
+            self.leave_time = time.time()
 #-----------------------------------------------------------------------------------------
 
     async def on_message(self, message):
