@@ -4,18 +4,25 @@ import time
 from discord import app_commands
 from discord.ext import commands
 
+
 intents = discord.Intents.default()
 intents.message_content = True
-
+MY_GUILD = discord.Object(id=)#サーバーID
 
 class MyClient(discord.Client):
     leave_name = 0
     leave_time = 0
 
+    def __init__(self, *, intents: discord.Intents):
+        super().__init__(intents=intents)
+        self.tree = app_commands.CommandTree(self)
+
+    async def setup_hook(self):
+        self.tree.copy_global_to(guild=MY_GUILD)
+        await self.tree.sync(guild=MY_GUILD)
+
     async def on_ready(self):
         print(f'Logged on as {self.user}!')
-        # 通知メッセージを書き込むテキストチャンネル（チャンネルIDを指定）
-        self.botRoom = client.get_channel() 
 
 #noticebot------------------------------------------------------------------------------
     async def on_voice_state_update(self, member, before, after):
@@ -25,7 +32,6 @@ class MyClient(discord.Client):
         # 通知メッセージを書き込むテキストチャンネル（チャンネルIDを指定）
         botRoom = client.get_channel()
 
-        # チャンネルへの入室ステータスが変更されたとき（ミュートON、OFFに反応しないように分岐）
         if before.channel != after.channel:
 
             # 入室通知
@@ -71,7 +77,7 @@ async def channel(interaction: discord.Interaction):
     for ch in client.get_all_channels():
         channels[ch.name] = str(ch.id)
 
-    #console output
+    #ターミナルに表示したいとき
     #for name, id in channels.items():
     #    print("name:" + name + "    id:" + id)
 
