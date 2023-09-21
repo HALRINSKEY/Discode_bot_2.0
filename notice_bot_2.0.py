@@ -7,7 +7,7 @@ from discord.ext import commands
 
 intents = discord.Intents.default()
 intents.message_content = True
-MY_GUILD = discord.Object(id=)#サーバーID
+MY_GUILD = discord.Object(id=966831928609243207)#サーバーIDを指定
 
 class MyClient(discord.Client):
     leave_name = 0
@@ -28,9 +28,9 @@ class MyClient(discord.Client):
     async def on_voice_state_update(self, member, before, after):
         
         # 入退室を監視する対象のボイスチャンネル（チャンネルIDを指定）
-        announceChannelIds = []
+        announceChannelIds = [966831929058025483]
         # 通知メッセージを書き込むテキストチャンネル（チャンネルIDを指定）
-        botRoom = client.get_channel()
+        botRoom = client.get_channel(966831929058025482)
 
         if before.channel != after.channel:
 
@@ -77,13 +77,9 @@ async def channel(interaction: discord.Interaction):
     for ch in client.get_all_channels():
         channels[ch.name] = str(ch.id)
 
-    #ターミナルに表示したいとき
-    #for name, id in channels.items():
-    #    print("name:" + name + "    id:" + id)
-
     ch_id ="\n".join(["name:{0}      id:{1}".format(key, value) for (key, value) in channels.items()])
     await interaction.response.send_message(ch_id)
 
 #------------------------------------------------------------------------------------------
 
-client.run("token")
+client.run("OTY2OTMwOTgzOTk3ODI5MjUw.GrbXYK.QLSYi8eK88KJv9r9vPsgxiVI3XajScthWUeJkk")
