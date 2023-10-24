@@ -56,6 +56,21 @@ Applicationタブの**New Application**で新規botを作成します
 
 <br>notice_bot_2.0.pyを実行すると指定されたテキストチャンネルに通知がされます
 
+<br>
+
+### 参考サイト
+
+https://discordpy.readthedocs.io/ja/latest/
+
+https://tech-cci.io/archives/6412
+
+https://qiita.com/sizumita/items/9d44ae7d1ce007391699
+
+https://qiita.com/1ntegrale9/items/9d570ef8175cf178468f
+
+https://qiita.com/mtb_beta/items/d257519b018b8cd0cc2e
+
+
 
 
 
