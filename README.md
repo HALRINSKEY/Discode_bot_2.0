@@ -50,9 +50,13 @@ Applicationタブの**New Application**で新規botを作成します
 
 ![スクリーンショット 2023-10-24 190701](https://github.com/HALRINSKEY/Discode_bot_2.0/assets/50315416/550f4ae4-97c5-4367-8c04-8eae0303d53f)
 
-<br>※トークンはダブルクォーテーションあるいはシングルクォーテーションで囲んで文字列で指定してください  "token"
+<br>※トークンはダブルクォーテーションあるいはシングルクォーテーションで囲んで文字列で指定してください
 
-※入退室を監視したいチャンネルが複数ある場合は , 区切りでで指定してください　EnterChannelID = [channel1_ID, channel2_ID] 
+"token"
+
+※入退室を監視したいチャンネルが複数ある場合は , 区切りでで指定してください
+
+EnterChannelID = [channel1_ID, channel2_ID] 
 
 <br>notice_bot_2.0.pyを実行すると指定されたテキストチャンネルに通知がされます
 
