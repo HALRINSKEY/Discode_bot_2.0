@@ -12,7 +12,7 @@ windows 10
 
 ## 使い方
 
-###　Botの作成
+### Botの作成
 
 1.<https://discord.com/developers/applications>にアクセスし
 
